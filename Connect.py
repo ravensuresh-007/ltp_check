@@ -13,7 +13,7 @@ import logging
 import requests
 from six.moves.urllib.parse import urljoin
 
-from Xts_MarketData import Exception as ex
+import Exception as ex
 
 log = logging.getLogger(__name__)
 
