@@ -5,7 +5,7 @@ import time
 import json
 
 
-from Xts_MarketData import Connect
+import Connect
 
 
 def Fetch_Specific_Time_Xts_Format(year, month, day, hour, minute, second):
