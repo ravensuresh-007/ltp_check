@@ -3,12 +3,13 @@ import random
 from datetime import datetime
 import os
 
+import Utilities as Ut, Market_Data_Utilities as Mdu, Ineractive_Data_Utilities as Idu
+
 app = Flask(__name__)
 
 # List of available instruments
 INSTRUMENTS = [
-    'AAPL', 'GOOGL', 'MSFT', 'AMZN', 'META', 
-    'TSLA', 'NVDA', 'JPM', 'V', 'WMT'
+    2475, 5900, 7229, 15083, 1394
 ]
 
 @app.route('/')
@@ -23,7 +24,7 @@ def get_instruments():
     # Generate data
     data = [{
         'symbol': symbol,
-        'ltp': round(random.uniform(50, 500), 2),
+        'ltp': Mdu.Fetch_Ltp(Bt, 1, symbol),
         'lastUpdate': datetime.now().strftime('%H:%M:%S')
     } for symbol in selected]
     
