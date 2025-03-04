@@ -9,7 +9,7 @@ import random
 
 
 
-Utilities as Ut
+import Utilities as Ut
 
 
 def Get_OHLC(Bt, Ins_Token, Exchange_Segment, Start_Time, End_Time,Compression_Value=60):
