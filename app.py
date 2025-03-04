@@ -5,6 +5,13 @@ import os
 
 import Utilities as Ut, Market_Data_Utilities as Mdu, Ineractive_Data_Utilities as Idu
 
+print("Performing initial login...")
+Connect_Dict = Ut.Initial_Login_Modified("ATM011948")
+Market_Xt = Connect_Dict['Market_Xt']
+Interactive_Xt = Connect_Dict['Interactive_Xt']
+ClientID = Connect_Dict['ClientID']
+print("Login successful")
+
 app = Flask(__name__)
 
 # List of available instruments
@@ -24,7 +31,7 @@ def get_instruments():
     # Generate data
     data = [{
         'symbol': symbol,
-        'ltp': Mdu.Fetch_Ltp(Bt, 1, symbol),
+        'ltp': Mdu.Fetch_Ltp(Market_Xt, 1, symbol),
         'lastUpdate': datetime.now().strftime('%H:%M:%S')
     } for symbol in selected]
     
