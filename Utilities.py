@@ -121,7 +121,7 @@ def Initial_Login_Modified(client_id):
     """
     try:
         Config = configparser.ConfigParser()
-        Config.read('config.ini')
+        Config.read('Config.ini')
 
         # Get user configuration
         source = Config.get('user', 'source')
